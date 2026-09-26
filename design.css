@@ -1,0 +1,151 @@
+body{
+  background-color: rgb(9, 15, 15);
+  color: rgb(205, 230, 227);
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+}
+.page-header{
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px 12px;
+}
+h1{
+  color: rgb(190, 235, 229);
+  width: fit-content;
+  padding: 16px 20px;
+  border-width: 2px;
+  border-style: inset;
+  border-radius: 10px;
+  transition: color 250ms ease, text-shadow 250ms ease, box-shadow 250ms ease, transform 250ms ease;
+}
+
+h1:hover{
+  color: rgb(225, 250, 248);
+  text-shadow: 0 0 8px rgba(156, 255, 242, 0.65), 0 0 18px rgba(156, 255, 242, 0.3);
+  box-shadow: 0 0 10px rgba(156, 255, 242, 0.25), inset 0 0 10px rgba(156, 255, 242, 0.12);
+  transform: scale(1.02);
+  animation: soft-twinkle 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes soft-twinkle{
+  from{
+    text-shadow: 0 0 6px rgba(156, 255, 242, 0.45), 0 0 14px rgba(156, 255, 242, 0.2);
+    box-shadow: 0 0 7px rgba(156, 255, 242, 0.18), inset 0 0 7px rgba(156, 255, 242, 0.08);
+  }
+  to{
+    text-shadow: 0 0 10px rgba(156, 255, 242, 0.75), 0 0 20px rgba(156, 255, 242, 0.35);
+    box-shadow: 0 0 13px rgba(156, 255, 242, 0.32), inset 0 0 12px rgba(156, 255, 242, 0.16);
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  h1, h1:hover{
+    transition: none;
+    animation: none;
+  }
+}
+
+main{
+  width: min(800px, calc(100% - 32px));
+  margin: 12px auto 48px;
+}
+.section-title{
+  color: rgb(225, 250, 248);
+  font-size: 1.5rem;
+  margin: 0 0 16px;
+}
+.favorites-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.favorite-section{
+  background-color: rgb(16, 28, 28);
+  border: 1px solid rgb(47, 85, 81);
+  border-radius: 8px;
+  padding: 18px;
+  transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+.favorite-section:hover{
+  border-color: rgb(112, 210, 197);
+  box-shadow: 0 0 14px rgba(112, 210, 197, 0.16);
+  transform: translateY(-2px);
+}
+.favorite-section h3{
+  color: rgb(156, 255, 242);
+  margin: 0 0 10px;
+}
+.favorite-section p,
+.favorite-section ol{
+  color: rgb(205, 230, 227);
+  line-height: 1.6;
+  margin: 0;
+}
+.favorite-image{
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+.favorite-section ol{
+  padding-left: 22px;
+}
+.manhwa-section{
+  grid-column: 1 / -1;
+}
+.manhwa-list{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.manhwa-item{
+  min-width: 0;
+}
+.manhwa-item .favorite-image{
+  height: 220px;
+}
+.contact-section{
+  border-top: 1px solid rgb(47, 85, 81);
+  margin-top: 28px;
+  padding-top: 20px;
+}
+.contact-section .section-title{
+  font-size: 1.25rem;
+}
+.contact-section ul{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.contact-section a{
+  color: rgb(156, 255, 242);
+}
+.contact-section a:hover{
+  color: rgb(225, 250, 248);
+}
+@media (max-width: 560px){
+  .favorites-grid{
+    grid-template-columns: 1fr;
+  }
+  .manhwa-section{
+    grid-column: auto;
+  }
+  .manhwa-list{
+    grid-template-columns: 1fr;
+  }
+}
+.favorite-image_manhwa-image{
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+
+
+}
